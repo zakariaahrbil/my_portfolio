@@ -1,10 +1,31 @@
-'use client';
+"use client";
 import React from "react";
 import Image from "next/image";
 import ImageModal from "@/components/ImageModel";
+import { images } from "@/constants/images";
+import Shape from "@/components/Shape";
 
 const About = () => {
-    const [isModalOpen, setIsModalOpen] = React.useState(false);
+  const [isModalOpen, setIsModalOpen] = React.useState(false);
+
+  const content = [
+    {
+      svg: images.svg1,
+      text: "I ask why before I ask how. Curiosity drives every project I start — not just to build, but to understand, explore, and evolve ideas into something meaningful.",
+    },
+    {
+      svg: images.svg2,
+      text: "Patterns hide in plain sight. I seek clarity beyond complexity — transforming data, design, or code into systems that make sense and feel intuitive.",
+    },
+    {
+      svg: images.svg3,
+      text: "I don’t just ship — I shape. From the smallest detail to the overall experience, I care about quality and consistency. It’s not done until it’s done right.",
+    },
+    {
+      svg: images.svg4,
+      text: "Everything improves — including me. I treat every project as a chance to grow, experiment, and refine. Learning is constant, and transformation is the goal.",
+    },
+  ];
 
   return (
     <section
@@ -36,7 +57,7 @@ const About = () => {
             />
           </div>
         </div>
-        <section className="w-full flex flex-col sm:flex-row items-center sm:justify-between">
+        <section className="w-full flex flex-col lg:flex-row items-center lg:justify-between">
           <video
             src="/eye.mp4"
             className="sm:max-w-xl w-full "
@@ -55,72 +76,14 @@ const About = () => {
         {/* What Shapes My Work Section */}
         <div>
           <h3 className="text-2xl md:text-4xl font-light mb-8 mt-12 tracking-tighter">
-            what shapes my work
+            What shapes my work
           </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {/* Card 1 - Vision */}
-            <div className="bg-zinc-900 p-6 rounded-lg flex flex-col h-full">
-              <div className="mb-6 h-16 w-16 flex items-center justify-center">
-                {/* Eye Icon Placeholder */}
-                <div className="text-4xl text-white">👁️</div>
-                {/* Replace with actual icon component */}
-              </div>
-              <p className="text-sm opacity-75 mb-2">
-                I absorb my breaks used now:
-              </p>
-              <p className="text-sm">
-                Curiosity shapes each project — not just to build but to uncover
-                & explore, and evolve ideas through what might be vital.
-              </p>
-            </div>
-
-            {/* Card 2 - Patterns */}
-            <div className="bg-zinc-900 p-6 rounded-lg flex flex-col h-full">
-              <div className="mb-6 h-16 w-16 flex items-center justify-center">
-                {/* Pattern Icon Placeholder */}
-                <div className="text-4xl text-white">👁️</div>
-                {/* Replace with actual icon component */}
-              </div>
-              <p className="text-sm opacity-75 mb-2">
-                Patterns hide in plain sight.
-              </p>
-              <p className="text-sm">
-                I look for underlying systems — restructuring data, design, or
-                code into systems that make sense and predict future.
-              </p>
-            </div>
-
-            {/* Card 3 - Craft */}
-            <div className="bg-zinc-900 p-6 rounded-lg flex flex-col h-full">
-              <div className="mb-6 h-16 w-16 flex items-center justify-center">
-                {/* Tool Icon Placeholder */}
-                <div className="text-4xl text-white">🔧</div>
-                {/* Replace with actual icon component */}
-              </div>
-              <p className="text-sm opacity-75 mb-2">
-                I don't just ship — I forge.
-              </p>
-              <p className="text-sm">
-                From the smallest detail to the largest system, I care about
-                quality and considering time not done until it feels right.
-              </p>
-            </div>
-
-            {/* Card 4 - Growth */}
-            <div className="bg-zinc-900 p-6 rounded-lg flex flex-col h-full">
-              <div className="mb-6 h-16 w-16 flex items-center justify-center">
-                {/* DNA Icon Placeholder */}
-                <div className="text-4xl text-white">🧬</div>
-                {/* Replace with actual icon component */}
-              </div>
-              <p className="text-sm opacity-75 mb-2">
-                Everything improves — including me.
-              </p>
-              <p className="text-sm">
-                Deep experience combined with a taste for experiment and
-                infinite learning to constant and transformative growth.
-              </p>
-            </div>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-8xl">
+                {
+                    content.map((item, index) => (
+                        <Shape svg={item.svg} text={item.text} key={index} />
+                    ))
+                }
           </div>
         </div>
       </div>

@@ -108,21 +108,21 @@ export default function Menu() {
         className="p-[0.06rem] bg-gradient-to-b from-[#ffffff] to-[#2D2D2D] rounded-full"
         initial={{ width: isOpen ? "auto" : "3.8rem" }}
         animate={{ width: isOpen ? "auto" : "3.8rem" }}
-        transition={{ duration: 0.2, ease: "easeInOut" }}
+        transition={{ duration: 0.3, ease: "easeInOut" }}
       >
         <div
           className={`bg-[#191919] rounded-full flex items-center ${
             isOpen ? "justify-between px-8" : "justify-center"
           } py-4`}
         >
-          <AnimatePresence initial={false}>
+          <AnimatePresence initial={false} mode="sync">
             {isOpen && (
               <motion.ul
                 className="flex items-center gap-4 m-0 p-0 list-none"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                transition={{ duration: 0.3 }}
+                transition={{ duration: 0.1 }}
               >
                 {menuLinks.map((link, index) => (
                   <motion.li
@@ -153,14 +153,10 @@ export default function Menu() {
             }`}
             onClick={toggleMenu}
           >
-            <motion.img
+            <img
               src={isOpen ? images.close : images.menu}
               alt={isOpen ? "Close Menu" : "Open Menu"}
               className="h-8 w-8"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.1, ease: "easeInOut" }}
             />
           </div>
         </div>

@@ -77,4 +77,8 @@ export const images = {
   hero:'./heroBg.png',
   light:'./lightSee.png',
   me:'./me.png',
+  svg1: './svg1.svg',
+  svg2: './svg2.svg',
+  svg3: './svg3.svg',
+  svg4: './svg4.svg',
 };
