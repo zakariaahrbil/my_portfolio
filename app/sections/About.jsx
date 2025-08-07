@@ -42,7 +42,7 @@ const About = () => {
             src="/me.png"
             alt="Zakaria Ahrbil"
             onClick={() => setIsModalOpen(true)}
-            className=" sm:h-48  h-20   cursor-pointer  rounded-md max-sm:rounded-full hover:opacity-90 transition-opacity "
+            className=" sm:h-48  h-20   cursor-pointer  rounded-md max-sm:rounded-full hover:opacity-90 transition-all mix-blend-luminosity hover:mix-blend-normal duration-500 ease-in-out"
           />
 
           <ImageModal
