@@ -32,7 +32,7 @@ const Education = () => {
   return (
     <section
       id="education"
-      className="sm:min-h-screen w-[95%] max-w-8xl mx-auto mt-30"
+      className="sm:min-h-screen w-[95%] max-w-8xl mx-auto mt-30 relative"
     >
       <div className="container mx-auto">
         <h2 className="text-5xl md:text-6xl lg:text-8xl font-medium mb-16 tracking-tighter">
@@ -43,10 +43,10 @@ const Education = () => {
           {educationData.map((item, index) => (
             <div key={index} className="flex flex-col">
               <div className="bg-white text-black  px-2 py-1 mb-2 w-fit">
-                <span className="font-light sm:text-lg">{item.degree}</span>
+                <span className="font-medium sm:text-lg">{item.degree}</span>
               </div>
               <h3 className="text-md font-light">{item.institution}</h3>
-              <p className="text-sm font-light opacity-80">
+              <p className="text-sm sm:font-light opacity-80">
                 {item.period} | {item.location}
               </p>
             </div>

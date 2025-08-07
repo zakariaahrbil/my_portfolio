@@ -30,7 +30,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className="sm:min-h-screen w-[95%] max-w-8xl mx-auto  max-sm:mt-30"
+      className="sm:min-h-screen w-[95%] max-w-8xl mx-auto  max-sm:mt-30 "
     >
       <div className="container mx-auto">
         <div className="flex flex-row md:items-start items-center justify-between mb-16">
@@ -38,24 +38,19 @@ const About = () => {
             About Me
           </h2>
 
-          <div
-            className="sm:w-48 sm:h-48 w-24 h-20  relative cursor-pointer"
+          <img
+            src="/me.png"
+            alt="Zakaria Ahrbil"
             onClick={() => setIsModalOpen(true)}
-          >
-            <Image
-              src="/me.png"
-              alt="Zakaria Ahrbil"
-              fill
-              className="object-cover rounded-md max-sm:rounded-full hover:opacity-90 transition-opacity"
-            />
+            className=" sm:h-48  h-20   cursor-pointer  rounded-md max-sm:rounded-full hover:opacity-90 transition-opacity "
+          />
 
-            <ImageModal
-              isOpen={isModalOpen}
-              src="/me.png"
-              alt="Zakaria Ahrbil"
-              onClose={() => setIsModalOpen(false)}
-            />
-          </div>
+          <ImageModal
+            isOpen={isModalOpen}
+            src="/me.png"
+            alt="Zakaria Ahrbil"
+            onClose={() => setIsModalOpen(false)}
+          />
         </div>
         <section className="w-full flex flex-col lg:flex-row items-center lg:justify-between">
           <video
@@ -79,11 +74,9 @@ const About = () => {
             What shapes my work
           </h3>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-8xl">
-                {
-                    content.map((item, index) => (
-                        <Shape svg={item.svg} text={item.text} key={index} />
-                    ))
-                }
+            {content.map((item, index) => (
+              <Shape svg={item.svg} text={item.text} key={index} />
+            ))}
           </div>
         </div>
       </div>

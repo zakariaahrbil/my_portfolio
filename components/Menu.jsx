@@ -43,18 +43,18 @@ export default function Menu() {
   // Mobile menu
   if (isMobile) {
     return (
-      <nav className="fixed bottom-0 right-0 left-0 top-0 pointer-events-none">
+      <nav className="fixed bottom-0 right-0 left-0 top-0 z-10 pointer-events-none">
         {/* Mobile Full-Screen Menu */}
-        <AnimatePresence>
+        <AnimatePresence className="pointer-events-auto">
           {isOpen && (
             <motion.div
-              className="fixed inset-0 bg-white/6 backdrop-blur-md z-40 flex flex-col items-center justify-center pointer-events-auto"
+              className="fixed inset-0 bg-black/10 backdrop-blur-md z-80 flex flex-col items-center justify-center pointer-events-auto"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <motion.ul className="flex flex-col items-center gap-6 p-0 m-0 list-none">
+              <motion.ul className="flex flex-col items-center gap-6 p-0 m-0 list-none ">
                 {menuLinks.map((link, index) => (
                   <motion.li
                     key={link.name}
@@ -83,12 +83,12 @@ export default function Menu() {
         </AnimatePresence>
 
         {/* Menu Button - Positioned above the fullscreen menu */}
-        <div className="fixed bottom-8 right-8 z-50 pointer-events-auto">
+        <div
+          className="fixed bottom-8 right-8  z-90 pointer-events-auto"
+          onClick={toggleMenu}
+        >
           <div className="p-[0.06rem] bg-gradient-to-b from-[#ffffff] to-[#2D2D2D] rounded-full">
-            <div
-              className="p-4 bg-[#191919] rounded-full cursor-pointer"
-              onClick={toggleMenu}
-            >
+            <div className="p-4 bg-[#191919] rounded-full cursor-pointer">
               <img
                 src={isOpen ? images.close : images.menu}
                 alt={isOpen ? "Close Menu" : "Open Menu"}

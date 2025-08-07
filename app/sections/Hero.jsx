@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <div className="w-full h-full relative overflow-hidden">
+    <div className="w-full h-full relative  overflow-hidden">
       <motion.img
         src={images.hero}
         alt="Hero Background"
@@ -26,7 +26,7 @@ export default function Hero() {
           repeatType: "loop",
         }}
       />
-      <header className="sm:min-h-screen w-[95%] max-w-8xl mx-auto relative">
+      <header className="sm:min-h-screen w-[95%] max-w-8xl mx-auto relative  ">
         <Header />
         <section className="w-full flex flex-col items-center justify-center sm:gap-8 gap-4 text-center">
           <div className="flex gap-4 bg-white/6 backdrop-blur-[7px] w-fit items-center sm:px-8 sm:py-3 px-4 py-2 rounded-full relative overflow-hidden">

@@ -81,4 +81,6 @@ export const images = {
   svg2: './svg2.svg',
   svg3: './svg3.svg',
   svg4: './svg4.svg',
+  grain: './grain.png',
+  grain2: './grain2.webp',
 };
