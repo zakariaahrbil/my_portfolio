@@ -1,5 +1,9 @@
 "use client";
+import { images } from "@/constants/images";
+import Link from "next/link";
 import React from "react";
+import { motion } from "framer-motion";
+import { cn } from "@/lib/utils";
 
 const Education = () => {
   const educationData = [
@@ -32,9 +36,10 @@ const Education = () => {
   return (
     <section
       id="education"
-      className="sm:min-h-screen w-[95%] max-w-8xl mx-auto mt-30 relative"
+      className={cn("sm:min-h-screen w-[95%] max-w-8xl mx-auto mt-30 relative")}
     >
-      <div className="container mx-auto">
+     
+      <div className="w-full flex flex-col items-center" >
         <h2 className="text-5xl md:text-6xl lg:text-8xl font-medium mb-16 tracking-tighter">
           Education
         </h2>
@@ -51,6 +56,28 @@ const Education = () => {
               </p>
             </div>
           ))}
+        </div>
+      </div>
+      <div className=" w-full    mt-16  p-[0.09rem] bg-gradient-to-r from-black to-white md:rounded-full rounded-2xl">
+        <div className="bgnova w-full h-full py-12 px-4 flex flex-col sm:gap-6 gap-4 text-center items-center justify-center overflow-hidden md:rounded-full rounded-2xl">
+          <p className="sm:text-4xl text-xl tracking-wide ">
+            I solve problems and build things that work.
+          </p>
+          <motion.div
+            whileHover={{ y: -4, x: 4 }}
+            transition={{ duration: 0.2 }}
+          >
+            <Link
+              href={"#contact"}
+              className="flex gap-4 items-center justify-center sm:px-8 sm:py-3 px-6 py-2 bg-white/6 backdrop-blur-[32px] border-zinc-500/70 border  rounded-full"
+            >
+              <p className="sm:text-2xl text-md leading-none">Contact-me</p>
+              <img
+                src={images.contact}
+                className="sm:h-8 sm:w-8 h-6 w-6 "
+              ></img>
+            </Link>
+          </motion.div>
         </div>
       </div>
     </section>

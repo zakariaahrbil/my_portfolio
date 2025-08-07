@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <div className="w-full h-full relative  overflow-hidden">
+    <div className="w-full h-full relative  overflow-hidden ">
       <motion.img
         src={images.hero}
         alt="Hero Background"

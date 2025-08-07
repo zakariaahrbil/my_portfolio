@@ -4,6 +4,7 @@ import Menu from "@/components/Menu";
 import About from "./sections/About";
 import Education from "./sections/Education";
 import { images } from "@/constants/images";
+import Skills from "./sections/Skills";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
 
         <About />
         <Education />
+        <Skills/>
       </main>
     </div>
   );

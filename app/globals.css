@@ -36,3 +36,12 @@ body {
   background-color: white;
   color: black; 
 }
+
+.bgnova{
+  background-image: url('/novaBg.png');
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  
+}

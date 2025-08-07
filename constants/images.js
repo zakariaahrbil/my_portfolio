@@ -83,4 +83,6 @@ export const images = {
   svg4: './svg4.svg',
   grain: './grain.png',
   grain2: './grain2.webp',
+  contact: './contact.svg',
+  nova:'./novaBg.png'
 };
