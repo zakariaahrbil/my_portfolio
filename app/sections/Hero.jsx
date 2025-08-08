@@ -42,7 +42,7 @@ export default function Hero() {
               src={images.light}
               className="absolute z-40 top-1/2 -translate-y-1/2 h-auto"
             />
-            <div className="sm:h-5 sm:w-5 w-3 h-3  bg-white rounded-full"></div>
+            <div className="sm:h-5 sm:w-5 w-3 h-3  bg-[#FFE9D0]  rounded-full"></div>
             <p className="text-[0.6rem] sm:text-lg font-light">
               Software Engineering Student at ENSA Agadir
             </p>
@@ -53,7 +53,7 @@ export default function Hero() {
                 Developer <span className="font-light">and</span>
                 <br />
               </span>
-              <span className="font-['Times_New_Roman'] italic font-bold">
+              <span className="font-['Times_New_Roman'] italic font-bold text-[#FFE9D0]">
                 Graphic Designer
               </span>
             </h1>

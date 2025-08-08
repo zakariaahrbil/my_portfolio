@@ -9,7 +9,7 @@ const Footer = () => {
     <footer className="w-full bg-black text-white py-10 max-sm:mt-16">
       <div className="flex flex-col items-center justify-center gap-6">
         {/* Logo */}
-        <Link href={"#hero"} className="flex items-center justify-center"> 
+        <Link href={"#hero"} className="flex items-center justify-center">
           <img src="/logo.svg" alt="Zalmoxis Logo" className="h-18 md:h-24" />
         </Link>
 
@@ -47,7 +47,7 @@ const Footer = () => {
         </div>
 
         {/* Copyright */}
-        <p className="sm:text-lg text-md tracking-wide font-light text-center max-w-[70%] ">
+        <p className="text-[#FFE9D0] sm:text-lg text-md tracking-wide font-light text-center max-w-[70%] ">
           All rights reserved. © Copyright Zakaria Ahrbil{" "}
           {new Date().getFullYear()}.
         </p>

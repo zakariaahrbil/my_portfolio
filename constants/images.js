@@ -74,7 +74,7 @@ export const images = {
   eyeSee: "./eyeSee.svg",
   menu: "./menu.svg",
   close: "./menuClose.svg",
-  hero: "./heroBg.png",
+  hero: "./heroBg2.png",
   light: "./lightSee.png",
   me: "./me.png",
   svg1: "./svg1.svg",

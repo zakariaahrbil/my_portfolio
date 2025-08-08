@@ -39,14 +39,14 @@ const Education = () => {
       className={"sm:min-h-screen w-[95%] max-w-8xl mx-auto mt-30 relative"}
     >
       <div className="w-full flex flex-col items-center">
-        <h2 className="text-5xl md:text-6xl lg:text-8xl font-medium mb-16 tracking-tighter">
+        <h2 className="text-[#FFE9D0]  text-5xl md:text-6xl lg:text-8xl font-medium mb-16 tracking-tighter">
           Education
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 sm:gap-y-16 gap-y-8 px-4">
           {educationData.map((item, index) => (
             <div key={index} className="flex flex-col">
-              <div className="bg-white text-black  px-2 py-1 mb-2 w-fit">
+              <div className="bg-white  text-black  px-2 py-1 mb-2 w-fit">
                 <span className="font-medium sm:text-lg">{item.degree}</span>
               </div>
               <h3 className="text-md font-light">{item.institution}</h3>

@@ -42,7 +42,7 @@ const Contact = () => {
         className="sm:min-h-screen w-[95%] max-w-8xl mx-auto relative max-sm:px-4"
       >
         <div className="w-full flex flex-col items-center justify-center relative z-10">
-          <h2 className="text-5xl md:text-6xl lg:text-8xl font-medium sm:mb-14 mb-8 tracking-tighter text-center">
+          <h2 className="text-[#FFE9D0] text-5xl md:text-6xl lg:text-8xl font-medium sm:mb-14 mb-8 tracking-tighter text-center">
             Contact-me
           </h2>
 
@@ -61,9 +61,7 @@ const Contact = () => {
                   placeholder="your name"
                   {...register("fullName", { required: "Name is required" })}
                   className={`bg-white/6 backdrop-blur-md  rounded-full py-4 px-6 focus:outline-none text-white placeholder:text-white/30 ${
-                    errors.fullName
-                      ? "border border-red-500"
-                      : ""
+                    errors.fullName ? "border border-red-500" : ""
                   }`}
                 />
                 {errors.fullName && (
@@ -89,9 +87,7 @@ const Contact = () => {
                     },
                   })}
                   className={`bg-white/6 backdrop-blur-md  rounded-full py-4 px-6 focus:outline-none text-white placeholder:text-white/30 ${
-                    errors.email
-                      ? "border border-red-500"
-                      : ""
+                    errors.email ? "border border-red-500" : ""
                   }`}
                 />
                 {errors.email && (
@@ -111,9 +107,7 @@ const Contact = () => {
                   rows={5}
                   {...register("message", { required: "Message is required" })}
                   className={`bg-white/6 backdrop-blur-md  rounded-2xl py-4 px-6 focus:outline-none text-white placeholder:text-white/30 resize-none ${
-                    errors.message
-                      ? "border border-red-500"
-                      : ""
+                    errors.message ? "border border-red-500" : ""
                   }`}
                 />
                 {errors.message && (
@@ -127,7 +121,7 @@ const Contact = () => {
                 type="submit"
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.2 }}
-                className="bg-white text-black py-3 px-10 rounded-full self-center mt-2  text-2xl w-full tracking-tighter"
+                className="bg-[#FFE9D0]  text-black py-3 px-10 rounded-full self-center mt-2  text-2xl w-full tracking-tighter"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? "Sending..." : "Send Message"}

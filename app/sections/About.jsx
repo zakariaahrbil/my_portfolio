@@ -34,7 +34,7 @@ const About = () => {
     >
       <div className="container mx-auto">
         <div className="flex flex-row md:items-start items-center justify-between mb-16">
-          <h2 className="text-5xl md:text-6xl lg:text-8xl font-medium mb-8 md:mb-0 tracking-tighter">
+          <h2 className="text-[#FFE9D0] text-5xl md:text-6xl lg:text-8xl font-medium mb-8 md:mb-0 tracking-tighter">
             About Me
           </h2>
 
@@ -70,7 +70,7 @@ const About = () => {
 
         {/* What Shapes My Work Section */}
         <div>
-          <h3 className="text-2xl md:text-4xl font-light mb-8 mt-12 tracking-tighter">
+          <h3 className="text-[#FFE9D0] text-2xl md:text-4xl font-light mb-8 mt-12 tracking-tighter">
             What shapes my work
           </h3>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-8xl">
