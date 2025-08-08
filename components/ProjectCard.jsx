@@ -22,7 +22,7 @@ const ProjectCard = ({ project, index }) => {
             "https://images.unsplash.com/photo-1754404053324-8f910c2b7e2d?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
           }
           alt={project.title}
-          className="rounded-2xl border-4  border-white mix-blend-luminosity hover:mix-blend-normal  sm:h-72 h-50 w-full object-cover"
+          className="rounded-2xl border-4  border-white hover:mix-blend-luminosity mix-blend-normal  sm:h-72 h-50 w-full object-cover"
         />
       </div>
       <div className="w-full flex flex-col gap-4 justify-between px-4   ">
@@ -39,7 +39,7 @@ const ProjectCard = ({ project, index }) => {
             {project.technologies.map((tech, idx) => (
               <span
                 key={idx}
-                className={`backdrop-blur-sm text-white px-2 py-1 rounded-full sm:text-xs text-[0.5rem] hover:text-white hover:bg-black cursor-none ${
+                className={`backdrop-blur-sm text-white px-2 py-1 rounded-full sm:text-xs text-[0.5rem] hover:text-white hover:bg-black  ${
                   idx % 2 === 0 ? "bg-white/40" : "bg-white/20"
                 }`}
               >

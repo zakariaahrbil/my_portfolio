@@ -1,19 +1,31 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 const ImageModal = ({ isOpen, src, alt, onClose }) => {
+  // Prevent scrolling when modal is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isOpen]);
+
   if (!isOpen) return null;
 
   return (
     <div
-      className="fixed inset-0 bg-black bg-opacity-80 z-40 flex items-center justify-center p-4"
+      className="fixed inset-0 z-40 flex items-center justify-center p-4 backdrop-blur-lg bg-black/6 animate-fadeIn"
       onClick={onClose}
     >
       <div
-        className="relative max-w-4xl w-full max-h-[90vh] rounded-lg overflow-hidden"
+        className="relative max-w-[95vw] h-[90vh] rounded-lg overflow-hidden shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >
         <button
-          className="absolute top-4 right-4 z-10 bg-black bg-opacity-50 rounded-full p-2 text-white hover:bg-opacity-70 transition-all cursor-pointer"
+          className="absolute top-4 right-4 z-10 bg-black bg-opacity-50 rounded-full p-2 text-white hover:bg-opacity-70 transition-all cursor-pointer hover:rotate-90 duration-300"
           onClick={onClose}
         >
           <svg
@@ -31,12 +43,14 @@ const ImageModal = ({ isOpen, src, alt, onClose }) => {
             />
           </svg>
         </button>
-        <div className="relative w-full h-[80vh]">
+        <div className="h-full w-full flex items-center justify-center">
           <img
             src={src}
             alt={alt}
-            className="object-contain"
-            sizes="(max-width: 768px) 100vw, 80vw"
+            className="max-h-[90vh] max-w-full object-contain"
+            style={{
+              boxShadow: "0 10px 25px rgba(0, 0, 0, 0.2)",
+            }}
           />
         </div>
       </div>

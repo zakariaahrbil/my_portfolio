@@ -26,12 +26,12 @@ export default function () {
           {desLogos.map((elmt, idx) => (
             <div
               key={idx}
-              className="mix-blend-luminosity hover:mix-blend-normal bg-black cursor-pointer"
+              className=" bg-black cursor-pointer"
             >
               <img
                 src={elmt.icon}
                 name={elmt.name}
-                className="sm:h-22 h-14 w-auto flex-none mix-blend-luminosity hover:mix-blend-normal "
+                className="sm:h-22 h-14 w-auto flex-none hover:mix-blend-luminosity mix-blend-normal "
               />
             </div>
           ))}

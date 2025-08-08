@@ -8,7 +8,7 @@ import { AnimatedBackground } from "@/components/AnimatedBackground";
 const Dev = () => {
   return (
     <section
-      id="dev"
+      id="development"
       className="sm:min-h-screen w-[95%] max-w-8xl mx-auto mt-30 relative "
     >
         <AnimatedBackground/>
