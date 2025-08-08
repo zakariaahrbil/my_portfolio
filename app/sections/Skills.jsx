@@ -9,7 +9,7 @@ export default function () {
       id="skills"
       className={"sm:min-h-screen w-[95%] max-w-8xl mx-auto mt-30 relative"}
     >
-      <div className="w-full flex flex-col items-end relative z-20">
+      <div className="w-full flex flex-col items-end ">
         <h2 className="text-5xl md:text-6xl lg:text-8xl font-medium sm:mb-10 mb-8 tracking-tighter">
           Skills & Tools
         </h2>
@@ -22,7 +22,7 @@ export default function () {
       </div>
       <div className="text-center w-full sm:mt-4 ">
         <h2 className="font-light sm:text-2xl text-xl">UI/UX & Design</h2>
-        <div className="flex flex-wrap justify-center items-center gap-8 lg:mt-16 md:mt-10 mt-4">
+        <div className="flex flex-wrap justify-center items-center gap-8 lg:mt-16 md:mt-10 mt-8">
           {desLogos.map((elmt, idx) => (
             <div
               key={idx}
@@ -31,7 +31,7 @@ export default function () {
               <img
                 src={elmt.icon}
                 name={elmt.name}
-                className="sm:h-22 h-10 w-auto flex-none mix-blend-luminosity hover:mix-blend-normal "
+                className="sm:h-22 h-14 w-auto flex-none mix-blend-luminosity hover:mix-blend-normal "
               />
             </div>
           ))}

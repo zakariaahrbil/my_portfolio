@@ -36,10 +36,9 @@ const Education = () => {
   return (
     <section
       id="education"
-      className={cn("sm:min-h-screen w-[95%] max-w-8xl mx-auto mt-30 relative")}
+      className={"sm:min-h-screen w-[95%] max-w-8xl mx-auto mt-30 relative"}
     >
-     
-      <div className="w-full flex flex-col items-center" >
+      <div className="w-full flex flex-col items-center">
         <h2 className="text-5xl md:text-6xl lg:text-8xl font-medium mb-16 tracking-tighter">
           Education
         </h2>
@@ -60,8 +59,13 @@ const Education = () => {
       </div>
       <div className=" w-full    mt-16  p-[0.09rem] bg-gradient-to-r from-black to-white md:rounded-full rounded-2xl">
         <div className="bgnova w-full h-full py-12 px-4 flex flex-col sm:gap-6 gap-4 text-center items-center justify-center overflow-hidden md:rounded-full rounded-2xl">
-          <p className="sm:text-4xl text-xl tracking-wide ">
+          <p className="sm:text-4xl text-xl tracking-wide font-semibold">
             I solve problems and build things that work.
+          </p>
+          <p className="sm:text-md text-sm font-light max-w-2xl">
+            Each project is a step forward in my journey as a developer and
+            graphic designer. From concept to creation, I focus on creating
+            meaningful solutions.
           </p>
           <motion.div
             whileHover={{ y: -4, x: 4 }}

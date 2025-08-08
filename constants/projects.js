@@ -1,0 +1,101 @@
+export const projects = [
+  {
+    id: 1,
+    title: "Mobile Berry Examination App",
+    description:
+      "Designed and developed an Android application using Expo and React Native for streamlining the quality control of blackberries and raspberries. Integrated multi-step data entry, image capture, and PDF reporting to enhance the berry inspection workflow in field operations.",
+    technologies: [
+      "Expo",
+      "React Native",
+      "PHP",
+      "Supabase (Auth)",
+      "MySQL (cPanel)",
+      "NativeWind",
+      "Git",
+      "GitHub",
+    ],
+    image: "/placeholder-mbe-app.jpg",
+    liveUrl: "",
+    githubUrl: "#",
+    category: "Mobile",
+  },
+  {
+    id: 2,
+    title: "Website Development for Mondial Berry",
+    description:
+      "Design and development of a website showcasing Mondial Berry’s expertise in the cultivation and export of premium red fruits, highlighting their commitment to sustainability and strong presence in European and Middle Eastern markets.",
+    technologies: [
+      "Figma",
+      "Next.js",
+      "Git",
+      "GitHub",
+      "Vercel",
+      "Tailwind",
+      "Framer Motion",
+    ],
+    image: "/placeholder-mondial-berry.jpg",
+    liveUrl: "https://mondial-berry.vercel.app/",
+    githubUrl: "#",
+    category: "Frontend",
+  },
+  {
+    id: 3,
+    title:
+      "PFE – Automation of Administrative Document Extraction Using AI",
+    description:
+      "Development of an on-premise solution combining Real-ESRGAN, specialized OCRs, and the AceGPT-8B LLM with RAG functionality for structured extraction and intelligent search within documents, optimized for local servers.",
+    technologies: [
+      "Python",
+      "FastAPI",
+      "LlamaCpp",
+      "Next.js",
+      "Conda",
+      "PyTorch",
+    ],
+    image: "/placeholder-ai-extraction.jpg",
+    liveUrl: "",
+    githubUrl: "#",
+    category: "Full Stack",
+  },
+  {
+    id: 4,
+    title: "Agile Project Management Web App",
+    description:
+      "Backend development using Spring Boot for an Agile project management application. Implementation of user stories, epics, sprints, and product backlog task management. Integration of authentication and security features via JWT to protect data. API documented with Swagger.",
+    technologies: ["Spring Boot", "JWT", "MySQL", "Swagger"],
+    image: "/placeholder-agile-app.jpg",
+    liveUrl: "",
+    githubUrl: "#",
+    category: "Backend",
+  },
+  {
+    id: 5,
+    title: "School Management Web Application",
+    description:
+      "Design and development of a full-stack application for managing classes and timetables. Backend in Java, frontend in Next.js, MySQL database.",
+    technologies: ["Java", "Next.js", "MySQL", "UI/UX design"],
+    image: "/placeholder-school-app.jpg",
+    liveUrl: "",
+    githubUrl: "#",
+    category: "Full Stack",
+  },
+  {
+    id: 6,
+    title: "Website for ENSA Agadir Student Association",
+    description:
+      "Design and development of the website providing updates, information about clubs, and news for the ENSA Agadir Student Association.",
+    technologies: [
+      "Figma",
+      "Next.js",
+      "HTML",
+      "Tailwind",
+      "Git",
+      "GitHub",
+      "Vercel",
+    ],
+    image: "/placeholder-ensaa-sissan.jpg",
+    liveUrl: "https://ensaa-sissan.vercel.app/",
+    githubUrl: "#",
+    category: "Frontend",
+  },
+];

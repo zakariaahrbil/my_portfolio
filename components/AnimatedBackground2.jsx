@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
-export function AnimatedBackground() {
+export function AnimatedBackground2() {
   const [squares, setSquares] = useState([]);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -38,7 +38,7 @@ export function AnimatedBackground() {
       {squares.map((square) => (
         <motion.div
           key={square.id}
-          className="w-4 h-4 bg-black border-none"
+          className="w-4 h-4 bg-black border-none rounded-full"
           animate={{
             backgroundColor: ["#000000", "#ffffff", "#000000"],
             boxShadow: [
