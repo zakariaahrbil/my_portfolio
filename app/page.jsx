@@ -16,11 +16,15 @@ import Footer from "./sections/Footer";
 export default function Home() {
   useEffect(() => {
     const lenis = new Lenis({
-      smoothWheel: true,
-      smoothTouch: true,
-      smoothTouchDelay: 0.1,
-      smoothWheelDelay: 0.1,
-      duration: 1.1,
+      duration: 3,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      direction: "vertical",
+      gestureDirection: "vertical",
+      smooth: true,
+      smoothTouch: false,
+      touchMultiplier: 0,
+      infinite: false,
+      autoResize: true,
     });
     function raf(time) {
       lenis.raf(time);
