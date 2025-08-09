@@ -1,11 +1,16 @@
-import { images } from "@/constants/images";
-
+'use client';
+import {motion} from 'framer-motion';
 
 
 export default function Header() {
   return (
-    <div className="flex py-8 px-4 sm:justify-start justify-center sm:mb-6 mb-12 ">
-      <img src="/logo.svg" alt="Logo" className="h-10 sm:h-12 " /> 
-    </div>
+    <motion.div
+      initial={{ opacity: 0, filter: "blur(10px)"}}
+      animate={{ opacity: 1, filter: "blur(0px)" }}
+      transition={{ duration: 0.5 }}
+      className="flex py-8 px-4 sm:justify-start justify-center sm:mb-6 mb-12 "
+    >
+      <img src="/logo.svg" alt="Logo" className="h-10 sm:h-12 " />
+    </motion.div>
   );
 }
