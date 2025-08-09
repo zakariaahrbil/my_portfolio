@@ -86,7 +86,7 @@ const Footer = () => {
             <motion.img
               src="/logo.svg"
               alt="Zalmoxis Logo"
-              className="h-18 md:h-24"
+              className="h-14 md:h-18"
               whileHover={{ scale: 1.05 }}
               transition={{ ease: "easeInOut", stiffness: 300 }}
             />

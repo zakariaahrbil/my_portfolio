@@ -78,7 +78,16 @@ const About = () => {
             </motion.div>
           </motion.h2>
 
-          <img
+          <motion.img
+            initial={{ opacity: 0, filter: "blur(20px)", y: 20 }}
+            whileInView={{
+              opacity: 1,
+              filter: "blur(0px)",
+              y: 0,
+
+              transition: { duration: 0.8, ease: "easeOut", delay: 0.5 },
+            }}
+            viewport={{ once: true }}
             src="/me.png"
             alt="Zakaria Ahrbil"
             onClick={() => setIsModalOpen(true)}
@@ -93,29 +102,71 @@ const About = () => {
           />
         </div>
         <section className="w-full flex flex-col lg:flex-row items-center lg:justify-between">
-          <video
+          <motion.video
+            initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+              filter: "blur(0px)",
+              transition: { duration: 0.8, ease: "easeInOut", delay: 0.5 },
+            }}
+            viewport={{ once: true }}
             src="/eye.mp4"
-            className="sm:max-w-xl w-full "
+            className="sm:max-w-xl w-full border-black border-2 "
             autoPlay
             muted
             loop
           />
-          <p className="text-sm md:text-2xl sm:max-w-2xl max-w-[80%]  text-justify font-light">
-            I'm Zakaria Ahrbil, a creative developer and designer studying
-            Software Engineering. Through the myth of Zalmoxis, I channel code
-            and design into tools of transformation — from digital experiences
-            to intelligent systems.
-          </p>
+          <motion.p
+            className="text-sm md:text-2xl sm:max-w-2xl max-w-[80%] text-justify font-light"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.5 }}
+          >
+            {`I'm Zakaria Ahrbil, a creative developer and designer studying Software Engineering. Through the myth of Zalmoxis, I channel code and design into tools of transformation — from digital experiences to intelligent systems.`
+              .split(" ")
+              .map((word, index) => (
+                <motion.span
+                  key={index}
+                  className="inline-block mr-[0.25em]"
+                  initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
+                  whileInView={{
+                    opacity: 1,
+                    y: 0,
+                    filter: "blur(0px)",
+                    transition: {
+                      duration: 0.6,
+                      delay: index * 0.03, // Stagger the words
+                      ease: "easeOut",
+                    },
+                  }}
+                  viewport={{ once: true, amount: 0.5 }}
+                >
+                  {word}
+                </motion.span>
+              ))}
+          </motion.p>
         </section>
 
         {/* What Shapes My Work Section */}
         <div>
-          <h3 className="text-[#FFE9D0] text-2xl md:text-4xl font-light mb-8 mt-12 tracking-tighter">
+          <motion.h3
+            initial={{ opacity: 0, filter: "blur(20px)", y: 20 }}
+            whileInView={{
+              opacity: 1,
+              filter: "blur(0px)",
+              y: 0,
+
+              transition: { duration: 0.8, ease: "easeOut", delay: 0.5 },
+            }}
+            className="text-[#FFE9D0] text-2xl md:text-4xl font-light mb-8 mt-12 tracking-tighter"
+          >
             What shapes my work
-          </h3>
+          </motion.h3>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-8xl">
             {content.map((item, index) => (
-              <Shape svg={item.svg} text={item.text} key={index} />
+              <Shape svg={item.svg} text={item.text} key={index} idx={index} />
             ))}
           </div>
         </div>
