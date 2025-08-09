@@ -70,7 +70,13 @@ const VerticalColumn = ({
 
 export default function VerticalAnimatedPosters({ setPoster, setIsModalOpen }) {
   return (
-    <div className="flex gap-[2vw] justify-center overflow-hidden w-full h-[60vh] sm:h-[70vh] mt-12">
+    <motion.div
+        initial={{ opacity: 0, y: 50, filter: "blur(10px)" }}
+        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+        transition={{ duration: 0.6, delay: 0.5 }}
+        viewport={{ once: true, amount: 0.3}}
+    
+    className="flex gap-[2vw] justify-center overflow-hidden w-full h-[70vh] sm:h-[80vh] mt-12">
       <VerticalColumn
         startIndex={0}
         duration={190}
@@ -99,6 +105,6 @@ export default function VerticalAnimatedPosters({ setPoster, setIsModalOpen }) {
         setPoster={setPoster}
         setIsModalOpen={setIsModalOpen}
       />
-    </div>
+    </motion.div>
   );
 }

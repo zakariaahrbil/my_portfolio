@@ -11,7 +11,7 @@ export default function Hero() {
         src={images.hero}
         alt="Hero Background"
         className="absolute inset-0 sm:w-full h-full object-cover -z-0"
-        initial={{ filter: "blur(0px)" ,y: "-50%"}}
+        initial={{ filter: "blur(0px)", y: "-70%" }}
         animate={{
           y: "0%",
           filter: [
@@ -25,7 +25,7 @@ export default function Hero() {
           ease: "easeInOut",
           filter: {
             duration: 20,
-            ease: "spring",
+            ease: "easeInOut",
             repeat: Infinity,
             repeatType: "loop",
           },
@@ -37,13 +37,14 @@ export default function Hero() {
           <motion.div
             className="flex gap-4 bg-white/6 backdrop-blur-[7px] w-fit items-center sm:px-8 sm:py-3 px-4 py-2 rounded-full relative overflow-hidden"
             initial={{ opacity: 0, scale: 0.8, y: -20 }}
-            animate={{
+            whileInView={{
               opacity: 1,
               scale: 1,
               y: 0,
             }}
+            viewport={{ once: true }}
             transition={{
-              duration: 0.6,
+              duration: 0.8,
             }}
           >
             <motion.img
@@ -60,10 +61,11 @@ export default function Hero() {
             />
             <motion.div
               className="sm:h-5 sm:w-5 w-3 h-3 bg-[#FFE9D0] rounded-full"
-              animate={{
+              whileInView={{
                 scale: [1, 1.1, 1],
                 opacity: [1, 0.85, 1],
               }}
+              viewport={{ once: true }}
               transition={{
                 duration: 1.8,
                 repeat: Infinity,
@@ -79,8 +81,9 @@ export default function Hero() {
             <motion.h1 className="lg:text-8xl md:text-6xl text-4xl font-semibold">
               <motion.span
                 initial={{ opacity: 0, y: 50, filter: "blur(10px)" }}
-                animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                transition={{ duration: 0.8, delay: 0.2 }}
+                whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                viewport={{ once: true }}
+                transition={{ duration: 1.1, delay: 0.2 }}
               >
                 Developer <span className="font-light">and</span>
                 <br />
@@ -88,7 +91,7 @@ export default function Hero() {
               <motion.span
                 className="font-['Times_New_Roman'] italic font-bold text-[#FFE9D0]"
                 initial={{ opacity: 0, scale: 1.2, filter: "blur(15px)" }}
-                animate={{
+                whileInView={{
                   opacity: 1,
                   scale: 1,
                   filter: "blur(0px)",
@@ -98,14 +101,15 @@ export default function Hero() {
                     "0px 0px 0px rgba(255,233,208,0)",
                   ],
                 }}
+                viewport={{ once: true }}
                 transition={{
-                  duration: 1.2,
+                  duration: 1,
                   delay: 1,
                   textShadow: {
                     repeat: Infinity,
                     repeatType: "reverse",
                     duration: 3,
-                    delay: 1.5,
+                    delay: 1,
                   },
                 }}
               >
@@ -115,6 +119,7 @@ export default function Hero() {
             <motion.p
               initial={{ opacity: 0, scale: 1.2, filter: "blur(10px)" }}
               animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+              transition={{ duration: 1, delay: 1.5, ease: "easeInOut" }}
               className="sm:text-lg text-sm font-light"
             >
               Where Vision Becomes Logic

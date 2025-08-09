@@ -6,17 +6,18 @@ import { images } from "@/constants/images";
 export default function SeeMyWork() {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
-      animate={{
+      initial={{ opacity: 0, y: 20, filter: "blur(20px)" }}
+      whileInView={{
         opacity: 1,
         y: 0,
         filter: "blur(0px)",
         transition: {
-          duration: 0.5,
+          duration: 0.8,
           ease: "easeInOut",
-          delay: 0.3,
+          delay: 0.7,
         },
       }}
+      viewport={{ once: true }}
       whileHover={{ y: -4, x: 4, transition: { duration: 0.1 } }}
       className="p-[0.06rem] bg-gradient-to-b from-[#ffffff] to-[#2D2D2D] rounded-full max-sm:mt-2 "
     >

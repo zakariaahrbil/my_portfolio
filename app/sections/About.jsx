@@ -1,9 +1,9 @@
 "use client";
 import React from "react";
-import Image from "next/image";
 import ImageModal from "@/components/ImageModel";
 import { images } from "@/constants/images";
 import Shape from "@/components/Shape";
+import { motion } from "framer-motion";
 
 const About = () => {
   const [isModalOpen, setIsModalOpen] = React.useState(false);
@@ -34,9 +34,49 @@ const About = () => {
     >
       <div className="container mx-auto">
         <div className="flex flex-row md:items-start items-center justify-between mb-16">
-          <h2 className="text-[#FFE9D0] text-5xl md:text-6xl lg:text-8xl font-medium mb-8 md:mb-0 tracking-tighter">
-            About Me
-          </h2>
+          <motion.h2 className="text-[#FFE9D0] text-5xl md:text-6xl lg:text-8xl font-medium mb-8 md:mb-0 tracking-tighter ">
+            {/* Animation par lettre */}
+            <motion.div
+              initial={{ overflow: "hidden" }}
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.5 }}
+              className="overflow-visible px-2"
+            >
+              {"About Me".split("").map((char, index) => (
+                <motion.span
+                  key={index}
+                  className="inline-block"
+                  initial={{
+                    y: 100,
+                    opacity: 0,
+                    filter: "blur(8px)",
+                    rotateX: "45deg",
+                  }}
+                  variants={{
+                    visible: {
+                      y: 0,
+                      opacity: 1,
+                      filter: "blur(0px)",
+                      rotateX: "0deg",
+                      transition: {
+                        duration: 0.8,
+                        delay: 0.05 * index,
+                        ease: [0.22, 1, 0.36, 1],
+                      },
+                    },
+                  }}
+                  whileHover={{
+                    color: "#ffffff",
+
+                    textShadow: "0px 0px 8px rgba(255,233,208,0.7)",
+                    transition: { duration: 0.2 },
+                  }}
+                >
+                  {char === " " ? "\u00A0" : char}
+                </motion.span>
+              ))}
+            </motion.div>
+          </motion.h2>
 
           <img
             src="/me.png"

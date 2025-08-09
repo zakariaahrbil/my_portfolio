@@ -5,7 +5,25 @@ import React from "react";
 
 const InfiniteScrollingLogosAnimation = () => {
   return (
-    <div className=" py-5 lg:mt-16 md:mt-10 mt-4 ">
+    <motion.div
+      initial={{
+        y: 100,
+        opacity: 0,
+        filter: "blur(8px)",
+      }}
+      whileInView={{
+        y: 0,
+        opacity: 1,
+        filter: "blur(0px)",
+      }}
+      viewport={{ once: true }}
+      transition={{
+        duration: 0.8,
+        delay: 0.4,
+        ease: [0.22, 1, 0.36, 1],
+      }}
+      className=" py-5 lg:mt-16 md:mt-10 mt-4 "
+    >
       <div className="py-4 flex relative overflow-hidden before:absolute before:left-0 before:top-0 before:z-10 before:h-full before:w-10 before:bg-gradient-to-r before:from-zinc-950 before:to-transparent before:content-[''] after:absolute after:right-0 after:top-0 after:h-full after:w-10 after:bg-gradient-to-l after:from-zinc-950 after:to-transparent after:content-['']">
         <motion.div
           transition={{
@@ -32,7 +50,7 @@ const InfiniteScrollingLogosAnimation = () => {
           ))}
         </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

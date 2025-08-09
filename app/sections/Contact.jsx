@@ -33,7 +33,11 @@ const Contact = () => {
 
   return (
     <div className="relative h-full w-full z-0 mt-30">
-      <img
+      <motion.img
+        initial={{ filter: "blur(10px)", opacity: 0 }}
+        whileInView={{ filter: "blur(0px)", opacity: 0.6 }}
+        viewport={{ once: true, amount: 0.5 }}
+        transition={{ duration: 2, ease: "easeInOut" }}
         src="./eyebg.png"
         className="absolute inset-0 object-cover object-center opacity-50"
       />
@@ -42,11 +46,56 @@ const Contact = () => {
         className="sm:min-h-screen w-[95%] max-w-8xl mx-auto relative max-sm:px-4"
       >
         <div className="w-full flex flex-col items-center justify-center relative z-10">
-          <h2 className="text-[#FFE9D0] text-5xl md:text-6xl lg:text-8xl font-medium sm:mb-14 mb-8 tracking-tighter text-center">
-            Contact-me
-          </h2>
+          <motion.h2 className="text-[#FFE9D0] text-5xl md:text-6xl lg:text-8xl font-medium sm:mb-14 mb-8 tracking-tighter text-center">
+            {/* Animation par lettre */}
+            <motion.div
+              initial={{ overflow: "hidden" }}
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.5 }}
+              className="overflow-visible px-2"
+            >
+              {"Contact-me".split("").map((char, index) => (
+                <motion.span
+                  key={index}
+                  className="inline-block"
+                  initial={{
+                    y: 100,
+                    opacity: 0,
+                    filter: "blur(8px)",
+                    rotateX: "45deg",
+                  }}
+                  variants={{
+                    visible: {
+                      y: 0,
+                      opacity: 1,
+                      filter: "blur(0px)",
+                      rotateX: "0deg",
+                      transition: {
+                        duration: 0.8,
+                        delay: 0.05 * index,
+                        ease: [0.22, 1, 0.36, 1],
+                      },
+                    },
+                  }}
+                  whileHover={{
+                    color: "#ffffff",
+                    textShadow: "0px 0px 8px rgba(255,233,208,0.7)",
+                    transition: { duration: 0.2 },
+                  }}
+                >
+                  {char === " " ? "\u00A0" : char}
+                </motion.span>
+              ))}
+            </motion.div>
+          </motion.h2>
 
-          <div className="w-full max-w-xl mx-auto">
+          <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+              transition={{ duration: 0.7, ease: "easeInOut" }}
+          
+          className="w-full max-w-xl mx-auto">
             <form
               onSubmit={handleSubmit(onSubmit)}
               className="flex flex-col gap-4"
@@ -121,7 +170,7 @@ const Contact = () => {
                 type="submit"
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.2 }}
-                className="bg-[#FFE9D0]  text-black py-3 px-10 rounded-full self-center mt-2  text-2xl w-full tracking-tighter"
+                className="bg-[#FFE9D0] cursor-pointer  text-black py-3 px-10 rounded-full self-center mt-2  text-2xl w-full tracking-tighter"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? "Sending..." : "Send Message"}
@@ -137,7 +186,7 @@ const Contact = () => {
                 </motion.p>
               )}
             </form>
-          </div>
+          </motion.div>
         </div>
       </section>
     </div>

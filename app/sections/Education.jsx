@@ -39,9 +39,48 @@ const Education = () => {
       className={"sm:min-h-screen w-[95%] max-w-8xl mx-auto mt-30 relative"}
     >
       <div className="w-full flex flex-col items-center">
-        <h2 className="text-[#FFE9D0]  text-5xl md:text-6xl lg:text-8xl font-medium mb-16 tracking-tighter">
-          Education
-        </h2>
+        <motion.h2 className="text-[#FFE9D0] text-5xl md:text-6xl lg:text-8xl font-medium mb-16 tracking-tighter">
+          {/* Animation par lettre */}
+          <motion.div
+            initial={{ overflow: "hidden" }}
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+            className="overflow-visible px-2"
+          >
+            {"Education".split("").map((char, index) => (
+              <motion.span
+                key={index}
+                className="inline-block"
+                initial={{
+                  y: 100,
+                  opacity: 0,
+                  filter: "blur(8px)",
+                  rotateX: "45deg",
+                }}
+                variants={{
+                  visible: {
+                    y: 0,
+                    opacity: 1,
+                    filter: "blur(0px)",
+                    rotateX: "0deg",
+                    transition: {
+                      duration: 0.8,
+                      delay: 0.05 * index,
+                      ease: [0.22, 1, 0.36, 1],
+                    },
+                  },
+                }}
+                whileHover={{
+                  color: "#ffffff",
+                  textShadow: "0px 0px 8px rgba(255,233,208,0.7)",
+                  transition: { duration: 0.2 },
+                }}
+              >
+                {char === " " ? "\u00A0" : char}
+              </motion.span>
+            ))}
+          </motion.div>
+        </motion.h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 sm:gap-y-16 gap-y-8 px-4">
           {educationData.map((item, index) => (
