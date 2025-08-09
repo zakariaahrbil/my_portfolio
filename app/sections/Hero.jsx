@@ -36,10 +36,10 @@ export default function Hero() {
         <section className="w-full flex flex-col items-center justify-center sm:gap-8 gap-4 text-center">
           <motion.div
             className="flex gap-4 bg-white/6 backdrop-blur-[7px] w-fit items-center sm:px-8 sm:py-3 px-4 py-2 rounded-full relative overflow-hidden"
-            initial={{ opacity: 0, scale: 0.8, y: -20 }}
+            initial={{ opacity: 0, y: -20 }}
             whileInView={{
               opacity: 1,
-              scale: 1,
+
               y: 0,
             }}
             viewport={{ once: true }}

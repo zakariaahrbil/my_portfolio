@@ -149,7 +149,7 @@ const Education = () => {
           opacity: 1,
           y: 0,
           filter: "blur(0px)",
-          transition: { duration: 0.7, ease: "easeOut", delay: 0.1 },
+          transition: { duration: 0.4, ease: "easeOut", delay: 0.1 },
         }}
         onAnimationComplete={() => {
           // Start the background opacity animation after the container animation completes
