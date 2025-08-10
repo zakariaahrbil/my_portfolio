@@ -71,9 +71,9 @@ const VerticalColumn = ({
 export default function VerticalAnimatedPosters({ setPoster, setIsModalOpen }) {
   return (
     <motion.div
-        initial={{ opacity: 0, y: 50, filter: "blur(10px)" }}
-        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-        transition={{ duration: 0.6, delay: 0.5 }}
+        initial={{ opacity: 0,  filter: "blur(10px)" }}
+        whileInView={{ opacity: 1, filter: "blur(0px)" }}
+        transition={{ duration: 0.8, delay: 0.5 }}
         viewport={{ once: true, amount: 0.3}}
     
     className="flex gap-[2vw] justify-center overflow-hidden w-full h-[70vh] sm:h-[80vh] mt-12">

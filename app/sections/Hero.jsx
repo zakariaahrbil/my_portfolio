@@ -15,9 +15,9 @@ export default function Hero() {
         animate={{
           y: "0%",
           filter: [
-            "blur(0px) brightness(100%)",
-            "blur(70px) brightness(120%)",
-            "blur(0px) brightness(100%)",
+            "blur(0px) ",
+            "blur(70px) ",
+            "blur(0px) ",
           ],
         }}
         transition={{

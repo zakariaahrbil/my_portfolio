@@ -7,12 +7,12 @@ const InfiniteScrollingLogosAnimation = () => {
   return (
     <motion.div
       initial={{
-        y: 100,
+        
         opacity: 0,
         filter: "blur(8px)",
       }}
       whileInView={{
-        y: 0,
+        
         opacity: 1,
         filter: "blur(0px)",
       }}
@@ -20,7 +20,7 @@ const InfiniteScrollingLogosAnimation = () => {
       transition={{
         duration: 0.8,
         delay: 0.4,
-        ease: [0.22, 1, 0.36, 1],
+        ease: "easeOut",
       }}
       className=" py-5 lg:mt-16 md:mt-10 mt-4 "
     >

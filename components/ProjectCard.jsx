@@ -6,13 +6,13 @@ import { images } from "@/constants/images";
 const ProjectCard = ({ project, index }) => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 50 , filter: "blur(10px)" }}
-      whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      viewport={{ once: true }}
+      initial={{ opacity: 0, filter: "blur(10px)" }}
+      whileInView={{ opacity: 1, filter: "blur(0px)" }}
+      transition={{ duration: 0.8, delay: index * 0.1 }}
+      viewport={{ once: true ,amount: 0.2 }}
       whileHover={{
         scale: 1.05,
-        transition: { duration: 0.4, ease: "backInOut" },
+        transition: { duration: 0.4, ease: "easeInOut" },
       }}
       className="group relative bg-gradient-to-b from-white/20 to-black-1 backdrop-blur-sm h-full pb-3 rounded-t-xl overflow-hidden"
     >

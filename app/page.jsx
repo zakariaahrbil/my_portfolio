@@ -42,53 +42,53 @@ export default function Home() {
     };
   }, []);
 
-  useEffect(() => {
-    // Don't initialize Lenis on mobile
-    if (isMobile) {
-      if (lenisRef.current) {
-        lenisRef.current.destroy();
-        lenisRef.current = null;
+   useEffect(() => {
+     // Don't initialize Lenis on mobile
+     if (isMobile) {
+       if (lenisRef.current) {
+         lenisRef.current.destroy();
+         lenisRef.current = null;
 
-        if (rafIdRef.current) {
-          cancelAnimationFrame(rafIdRef.current);
-          rafIdRef.current = null;
-        }
-      }
-      return;
-    }
+         if (rafIdRef.current) {
+           cancelAnimationFrame(rafIdRef.current);
+           rafIdRef.current = null;
+         }
+       }
+       return;
+     }
 
-    // Initialize Lenis on desktop
-    if (!lenisRef.current) {
-      lenisRef.current = new Lenis({
-        duration: 1.2,
-        easing: (t) => t,
-        smoothWheel: true,
-        smoothTouch: false,
-        lerp:0.08
-      });
+     // Initialize Lenis on desktop
+     if (!lenisRef.current) {
+       lenisRef.current = new Lenis({
+         duration: 2,
+         easing: (t) => t,
+         smoothWheel: true,
+         smoothTouch: false,
+         lerp: 0.08,
+       });
 
-      const raf = (time) => {
-        if (lenisRef.current) {
-          lenisRef.current.raf(time);
-          rafIdRef.current = requestAnimationFrame(raf);
-        }
-      };
+       const raf = (time) => {
+         if (lenisRef.current) {
+           lenisRef.current.raf(time);
+           rafIdRef.current = requestAnimationFrame(raf);
+         }
+       };
 
-      rafIdRef.current = requestAnimationFrame(raf);
-    }
+       rafIdRef.current = requestAnimationFrame(raf);
+     }
 
-    return () => {
-      if (lenisRef.current) {
-        lenisRef.current.destroy();
-        lenisRef.current = null;
-      }
+     return () => {
+       if (lenisRef.current) {
+         lenisRef.current.destroy();
+         lenisRef.current = null;
+       }
 
-      if (rafIdRef.current) {
-        cancelAnimationFrame(rafIdRef.current);
-        rafIdRef.current = null;
-      }
-    };
-  }, [isMobile]);
+       if (rafIdRef.current) {
+         cancelAnimationFrame(rafIdRef.current);
+         rafIdRef.current = null;
+       }
+     };
+   }, [isMobile]);
 
   return (
     <div className="flex flex-col items-start justify-start min-h-screen bg-black w-full relative">

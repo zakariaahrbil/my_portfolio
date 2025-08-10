@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import { motion } from "framer-motion";
 import InfiniteScrollingLogosAnimation from "@/components/InfiniteScrollingLogosAnimation";
 import { desLogos } from "@/constants/skills";
@@ -81,12 +81,10 @@ export default function () {
       <div className="text-center w-full sm:mt-4 ">
         <motion.h2
           initial={{
-            y: 100,
             opacity: 0,
             filter: "blur(8px)",
           }}
           whileInView={{
-            y: 0,
             opacity: 1,
             filter: "blur(0px)",
           }}
@@ -102,12 +100,11 @@ export default function () {
         </motion.h2>
         <motion.div
           initial={{
-            y: 100,
             opacity: 0,
             filter: "blur(8px)",
           }}
           whileInView={{
-            y: 0,
+     
             opacity: 1,
             filter: "blur(0px)",
           }}
