@@ -32,7 +32,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="relative h-full w-full z-0 mt-30">
+    <div id="contact" className="relative h-full w-full z-0 mt-30">
       <motion.img
         initial={{ filter: "blur(10px)", opacity: 0 }}
         whileInView={{ filter: "blur(0px)", opacity: 0.6 }}

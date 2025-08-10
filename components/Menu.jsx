@@ -6,6 +6,16 @@ import { images } from "@/constants/images";
 export default function Menu() {
   const [isOpen, setIsOpen] = useState(false); // Start with menu open
   const [isMobile, setIsMobile] = useState(false);
+  const [activeSection, setActiveSection] = useState(""); // Track active section
+
+  const menuLinks = [
+    { name: "About", href: "#about" },
+    { name: "Education", href: "#education" },
+    { name: "Dev", href: "#development" },
+    { name: "Design", href: "#design" },
+    { name: "Posters", href: "#posters" },
+    { name: "Contact-me", href: "#contact" },
+  ];
 
   // Detect if we're on mobile
   useEffect(() => {
@@ -28,17 +38,39 @@ export default function Menu() {
     return () => window.removeEventListener("resize", checkIfMobile);
   }, []);
 
+  // Track which section is in view
+  useEffect(() => {
+    const sectionIds = menuLinks.map((link) => link.href.replace("#", ""));
+    const handleIntersect = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    };
+
+    const observer = new window.IntersectionObserver(handleIntersect, {
+      root: null,
+      rootMargin: "0px 0px -60% 0px", // Trigger when section is 40% from top
+      threshold: 0.2,
+    });
+
+    sectionIds.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => {
+      sectionIds.forEach((id) => {
+        const el = document.getElementById(id);
+        if (el) observer.unobserve(el);
+      });
+    };
+  }, []);
+
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
-
-  const menuLinks = [
-    { name: "About", href: "#about" },
-    { name: "Education", href: "#education" },
-    { name: "Dev", href: "#dev" },
-    { name: "Design", href: "#design" },
-    { name: "Contact-me", href: "#contact-me" },
-  ];
 
   // Mobile menu
   if (isMobile) {
@@ -67,7 +99,7 @@ export default function Menu() {
                     <a
                       href={link.href}
                       className={`text-white hover:text-gray-300 transition-colors ${
-                        index === 0
+                        activeSection === link.href.replace("#", "")
                           ? "font-medium text-2xl"
                           : "font-light opacity-50"
                       }`}
@@ -136,7 +168,9 @@ export default function Menu() {
                     <a
                       href={link.href}
                       className={`text-white hover:text-gray-300 transition-colors ${
-                        index === 0 ? "font-medium" : "font-light opacity-50"
+                        activeSection === link.href.replace("#", "")
+                          ? "font-medium"
+                          : "font-light opacity-50"
                       }`}
                     >
                       {link.name}
