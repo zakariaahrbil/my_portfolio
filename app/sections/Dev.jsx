@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { projects } from "@/constants/projects";
+import { projects, projectsDev } from "@/constants/projectsDev";
 import ProjectCard from "@/components/ProjectCard";
 import { AnimatedBackground } from "@/components/AnimatedBackground";
 
@@ -11,7 +11,7 @@ const Dev = () => {
       id="development"
       className="sm:min-h-screen w-[95%] max-w-8xl mx-auto mt-30 relative "
     >
-       <AnimatedBackground /> 
+      <AnimatedBackground />
       <div className="w-full flex flex-col sm:gap-4 gap-2 mb-8 sm:mb-16">
         <motion.h2 className="text-[#FFE9D0] text-5xl md:text-6xl lg:text-8xl font-medium tracking-tighter">
           {/* Animation par lettre */}
@@ -59,13 +59,12 @@ const Dev = () => {
           initial={{
             y: 100,
             opacity: 0,
-            filter: "blur(8px)"
+            filter: "blur(8px)",
           }}
           whileInView={{
             y: 0,
             opacity: 1,
-            filter: "blur(0px)"
-            
+            filter: "blur(0px)",
           }}
           viewport={{ once: true }}
           transition={{
@@ -81,7 +80,7 @@ const Dev = () => {
 
       {/* Projects Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 w-full px-8">
-        {projects.map((project, id) => (
+        {projectsDev.map((project, id) => (
           <ProjectCard project={project} key={id} />
         ))}
       </div>

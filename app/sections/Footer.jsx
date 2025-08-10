@@ -96,7 +96,7 @@ const Footer = () => {
         {/* Social Media Links */}
         <motion.div className="flex items-center gap-5" variants={itemVariants}>
           <motion.a
-            href="https://instagram.com"
+            href="https://www.instagram.com/zalmoxis.studio/"
             target="_blank"
             rel="noopener noreferrer"
             variants={socialIconVariants}
@@ -107,7 +107,7 @@ const Footer = () => {
           </motion.a>
 
           <motion.a
-            href="https://linkedin.com"
+            href="https://linkedin.com/in/zakaria-ahrbil"
             target="_blank"
             rel="noopener noreferrer"
             variants={socialIconVariants}
@@ -118,7 +118,7 @@ const Footer = () => {
           </motion.a>
 
           <motion.a
-            href="https://github.com"
+            href="https://github.com/zakariaahrbil"
             target="_blank"
             rel="noopener noreferrer"
             variants={socialIconVariants}
@@ -131,7 +131,7 @@ const Footer = () => {
 
         {/* Copyright with Typewriter Effect */}
         <motion.div
-        viewport={{ once: true , amount: 0.5 }}
+          viewport={{ once: true, amount: 0.5 }}
           className="text-[#FFE9D0] sm:text-lg text-md tracking-wide font-light text-center max-w-[70%] flex"
           variants={itemVariants}
         >

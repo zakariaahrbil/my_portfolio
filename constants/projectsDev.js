@@ -1,4 +1,4 @@
-export const projects = [
+export const projectsDev = [
   {
     id: 1,
     title: "Mobile Berry Examination App",
@@ -14,7 +14,7 @@ export const projects = [
       "Git",
       "GitHub",
     ],
-    image: "/placeholder-mbe-app.jpg",
+    image: "/projects/dev/p1.png",
     liveUrl: "",
     githubUrl: "#",
     category: "Mobile",
@@ -33,15 +33,14 @@ export const projects = [
       "Tailwind",
       "Framer Motion",
     ],
-    image: "/placeholder-mondial-berry.jpg",
+    image: "/projects/dev/p2.png",
     liveUrl: "https://mondial-berry.vercel.app/",
     githubUrl: "#",
     category: "Frontend",
   },
   {
     id: 3,
-    title:
-      "PFE – Automation of Administrative Document Extraction Using AI",
+    title: "PFE – Automation of Administrative Document Extraction Using AI",
     description:
       "Development of an on-premise solution combining Real-ESRGAN, specialized OCRs, and the AceGPT-8B LLM with RAG functionality for structured extraction and intelligent search within documents, optimized for local servers.",
     technologies: [
@@ -52,7 +51,7 @@ export const projects = [
       "Conda",
       "PyTorch",
     ],
-    image: "/placeholder-ai-extraction.jpg",
+    image: "/projects/dev/p3.png",
     liveUrl: "",
     githubUrl: "#",
     category: "Full Stack",
@@ -63,7 +62,7 @@ export const projects = [
     description:
       "Backend development using Spring Boot for an Agile project management application. Implementation of user stories, epics, sprints, and product backlog task management. Integration of authentication and security features via JWT to protect data. API documented with Swagger.",
     technologies: ["Spring Boot", "JWT", "MySQL", "Swagger"],
-    image: "/placeholder-agile-app.jpg",
+    image: "/projects/dev/p4.png",
     liveUrl: "",
     githubUrl: "#",
     category: "Backend",
@@ -74,7 +73,7 @@ export const projects = [
     description:
       "Design and development of a full-stack application for managing classes and timetables. Backend in Java, frontend in Next.js, MySQL database.",
     technologies: ["Java", "Next.js", "MySQL", "UI/UX design"],
-    image: "/placeholder-school-app.jpg",
+    image: "/projects/dev/p5.png",
     liveUrl: "",
     githubUrl: "#",
     category: "Full Stack",
@@ -93,7 +92,7 @@ export const projects = [
       "GitHub",
       "Vercel",
     ],
-    image: "/placeholder-ensaa-sissan.jpg",
+    image: "/projects/dev/p6.png",
     liveUrl: "https://ensaa-sissan.vercel.app/",
     githubUrl: "#",
     category: "Frontend",
