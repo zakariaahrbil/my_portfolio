@@ -160,6 +160,7 @@ const About = () => {
 
               transition: { duration: 0.8, ease: "easeOut", delay: 0.5 },
             }}
+            viewport={{ once: true, amount: 0.5 }}
             className="text-[#FFE9D0] text-2xl md:text-4xl font-light mb-8 mt-12 tracking-tighter"
           >
             What shapes my work

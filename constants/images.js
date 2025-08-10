@@ -84,7 +84,6 @@ export const images = {
   grain: "./grain.png",
   grain2: "./grain2.webp",
   contact: "./contact.svg",
-  nova: "./novaBg.png",
   instagram: "/social/instagram.svg",
   linkedin: "/social/linkedin.svg",
   github: "/social/github.svg",

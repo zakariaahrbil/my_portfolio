@@ -42,7 +42,6 @@ export default function Home() {
     };
   }, []);
 
-
   useEffect(() => {
     // Don't initialize Lenis on mobile
     if (isMobile) {
@@ -61,15 +60,11 @@ export default function Home() {
     // Initialize Lenis on desktop
     if (!lenisRef.current) {
       lenisRef.current = new Lenis({
-        duration: 2, 
-        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-        direction: "vertical",
-        gestureDirection: "vertical",
-        smooth: true,
+        duration: 1.2,
+        easing: (t) => t,
+        smoothWheel: true,
         smoothTouch: false,
-        touchMultiplier: 0,
-        infinite: false,
-        autoResize: true,
+        lerp:0.08
       });
 
       const raf = (time) => {

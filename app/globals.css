@@ -19,9 +19,6 @@
   }
 }
 
-html {
-  scroll-behavior: initial;
-} 
 
 body {
   background: var(--background);
@@ -35,7 +32,7 @@ body {
 }
 
 .bgnova {
-  background-image: url("/novaBg.png");
+  background-image: url("/novaBg.webp");
   background-size: cover;
   background-position: top;
   background-repeat: no-repeat;
@@ -53,3 +50,10 @@ body {
   background: #555;
   cursor: pointer;
 }
+
+html {
+  scroll-behavior: auto;
+}
+
+
+
