@@ -112,7 +112,7 @@ const About = () => {
             }}
             viewport={{ once: true }}
             src="/eye.mp4"
-            className="sm:max-w-xl w-full border-black border-2 "
+            className="sm:max-w-xl w-full  "
             autoPlay
             muted
             loop
