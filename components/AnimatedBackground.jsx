@@ -1,38 +1,45 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { motion } from "framer-motion";
 
 export function AnimatedBackground() {
-  const [squares, setSquares] = useState([]);
-  const [isMobile, setIsMobile] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(0);
 
+  // Run only on client-side
   useEffect(() => {
-    const checkIfMobile = () => {
-      const mobile = window.innerWidth < 768;
-      setIsMobile(mobile);
-    
-     const squareCount = isMobile ? 500 : 440;
-     const newSquares = Array.from({ length: squareCount }, (_, i) => ({
-       id: i,
-       delay: Math.random() * 8,
-       duration: 4 + Math.random() * 2,
-     }));
+    setWindowWidth(window.innerWidth);
 
-    setSquares(newSquares);}
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
 
-    checkIfMobile();
-    window.addEventListener("resize", checkIfMobile);
-    return () => window.removeEventListener("resize", checkIfMobile);
-  }, [isMobile]);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // Derive values from state instead of storing as state
+  const isMobile = windowWidth < 768;
+  const columns = isMobile ? 10 : 40;
+  const squareCount = isMobile ? 100 : 200; // Significantly reduced count
+
+  // Create squares only when dependencies change
+  const squares = useMemo(() => {
+    return Array.from({ length: squareCount }, (_, i) => ({
+      id: i,
+      delay: Math.random() * 8,
+      duration: 4 + Math.random() * 2,
+    }));
+  }, [squareCount]);
+
+  // Early return during SSR
+  if (windowWidth === 0) return null;
 
   return (
     <div
-      className="absolute inset-0 z-0 grid overflow-hidden opacity-10 "
+      className="absolute inset-0 z-0 grid overflow-hidden opacity-10"
       style={{
-        gridTemplateColumns: isMobile
-          ? "repeat(10, minmax(0, 1fr))" // 10 columns for mobile (10×10 grid)
-          : "repeat(40, minmax(0, 1fr))", // 40 columns for desktop (40×10 grid)
+        gridTemplateColumns: `repeat(${columns}, minmax(0, 1fr))`,
       }}
     >
       {squares.map((square) => (

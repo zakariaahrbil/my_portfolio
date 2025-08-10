@@ -49,7 +49,7 @@ export default function Hero() {
           >
             <motion.img
               initial={{ x: "-100%" }}
-              animate={{ x: "100%" }}
+              whileInView={{ x: "100%" }}
               transition={{
                 duration: 4,
                 ease: "linear",
@@ -57,6 +57,7 @@ export default function Hero() {
                 repeatType: "loop",
               }}
               src={images.light}
+              viewport={{ once: true }}
               className="absolute z-40 top-1/2 -translate-y-1/2 h-auto"
             />
             <motion.div
@@ -118,8 +119,9 @@ export default function Hero() {
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, scale: 1.2, filter: "blur(10px)" }}
-              animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+              whileInView={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
               transition={{ duration: 1, delay: 1.5, ease: "easeInOut" }}
+              viewport={{ once: true }}
               className="sm:text-lg text-sm font-light"
             >
               Where Vision Becomes Logic
@@ -127,6 +129,16 @@ export default function Hero() {
           </div>
           <SeeMyWork />
         </section>
+        {/* <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 2 }}
+          viewport={{ once: true }}
+          className="sm:text-[0.5rem] hidden sm:block max-w-[70%] text-white/50  italic text-center mt-12 mx-auto"
+        >
+          *For optimal viewing experience, we recommend using Microsoft Edge or
+          Firefox browsers
+        </motion.p> */}
       </header>
     </div>
   );

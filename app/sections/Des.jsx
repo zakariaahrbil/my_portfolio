@@ -3,7 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { projects } from "@/constants/projects";
 import ProjectCard from "@/components/ProjectCard";
-import { AnimatedBackground2 } from "@/components/AnimatedBackground2";
+import { AnimatedBackground } from "@/components/AnimatedBackground";
 
 const Des = () => {
   return (
@@ -11,7 +11,7 @@ const Des = () => {
       id="design"
       className="sm:min-h-screen w-[95%] max-w-8xl mx-auto mt-30 relative "
     >
-      <AnimatedBackground2 />
+       <AnimatedBackground /> 
       <div className="w-full flex flex-col items-center sm:gap-4 gap-2 mb-8 sm:mb-16">
         <motion.h2 className="text-[#FFE9D0] text-5xl md:text-6xl lg:text-8xl font-medium tracking-tighter">
           {/* Animation par lettre */}

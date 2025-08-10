@@ -11,7 +11,7 @@ const Dev = () => {
       id="development"
       className="sm:min-h-screen w-[95%] max-w-8xl mx-auto mt-30 relative "
     >
-      <AnimatedBackground />
+       <AnimatedBackground /> 
       <div className="w-full flex flex-col sm:gap-4 gap-2 mb-8 sm:mb-16">
         <motion.h2 className="text-[#FFE9D0] text-5xl md:text-6xl lg:text-8xl font-medium tracking-tighter">
           {/* Animation par lettre */}
