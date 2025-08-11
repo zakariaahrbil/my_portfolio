@@ -40,7 +40,7 @@ export const projectsDev = [
   },
   {
     id: 3,
-    title: "PFE – Automation of Administrative Document Extraction Using AI",
+    title: "PFA – Automation of Administrative Document Extraction Using AI",
     description:
       "Development of an on-premise solution combining Real-ESRGAN, specialized OCRs, and the AceGPT-8B LLM with RAG functionality for structured extraction and intelligent search within documents, optimized for local servers.",
     technologies: [

@@ -102,7 +102,7 @@ const Education = () => {
             >
               <div className="relative mb-2 w-fit overflow-hidden">
                 <motion.div
-                  className="bg-white text-black px-2 py-1 w-fit"
+                  className="bg-white text-black px-2 py-1 w-fit rounded-sm"
                   initial={{ x: "-100%" }}
                   whileInView={{
                     x: 0,
@@ -179,7 +179,7 @@ const Education = () => {
             <motion.p
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, duration: 0.6 ,ease: "easeInOut"}}
+              transition={{ delay: 0.5, duration: 0.6, ease: "easeInOut" }}
               className="sm:text-4xl text-xl tracking-wide font-semibold"
             >
               I solve problems and build things that work.
@@ -188,28 +188,63 @@ const Education = () => {
             <motion.p
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, duration: 0.6 ,ease: "easeInOut"}}
+              transition={{ delay: 0.5, duration: 0.6, ease: "easeInOut" }}
               className="sm:text-md text-sm font-light max-w-2xl"
             >
               Each project is a step forward in my journey as a developer and
               graphic designer. From concept to creation, I focus on creating
               meaningful solutions.
             </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, duration: 0.6,ease: "easeInOut" }}
-              whileHover={{ y: -4, x: 4 }}
-            >
-              <Link
-                href={"#contact"}
-                className="flex gap-4 items-center justify-center sm:px-8 sm:py-3 px-6 py-2 bg-white/6 backdrop-blur-[32px] border-zinc-500/70 border rounded-full w-fit"
+            <div className="flex gap-1 sm:gap-0 flex-col sm:flex-row items-center justify-center">
+              <motion.div
+                initial={{ opacity: 0, y: 20, filter: "blur(20px)" }}
+                whileInView={{
+                  opacity: 1,
+                  y: 0,
+                  filter: "blur(0px)",
+                  transition: {
+                    duration: 0.8,
+                    ease: "easeInOut",
+                    delay: 0.7,
+                  },
+                }}
+                viewport={{ once: true }}
+                whileHover={{ y: -4, x: 4, transition: { duration: 0.2 } }}
               >
-                <p className="sm:text-2xl text-md leading-none">Contact-me</p>
-                <img src={images.contact} className="sm:h-8 sm:w-8 h-6 w-6" />
-              </Link>
-            </motion.div>
+                <Link
+                  href={"#contact"}
+                  className="flex gap-4 items-center justify-center sm:px-8 sm:py-3 px-6 py-2 bg-white/6 backdrop-blur-[32px] border-zinc-500/70 border rounded-full w-fit"
+                >
+                  <p className="sm:text-2xl text-md leading-none">Contact-me</p>
+                  <img src={images.contact} className="sm:h-8 sm:w-8 h-6 w-6" />
+                </Link>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20, filter: "blur(20px)" }}
+                whileInView={{
+                  opacity: 1,
+                  y: 0,
+                  filter: "blur(0px)",
+                  transition: {
+                    duration: 0.8,
+                    ease: "easeInOut",
+                    delay: 0.7,
+                  },
+                }}
+                viewport={{ once: true }}
+                whileHover={{ y: -4, x: 4 }}
+              >
+                <Link
+                  href="/zakaria_ahrbil_cv.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex gap-4 items-center justify-center sm:px-8 sm:py-3 px-6 py-2   rounded-full w-fit"
+                >
+                  <p className="sm:text-2xl text-md leading-none">View Cv</p>
+                  <img src="./open.svg" className="sm:h-7 sm:w-7 h-5 w-5" />
+                </Link>
+              </motion.div>
+            </div>
           </div>
         </div>
       </motion.div>

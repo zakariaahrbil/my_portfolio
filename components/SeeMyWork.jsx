@@ -18,7 +18,7 @@ export default function SeeMyWork() {
         },
       }}
       viewport={{ once: true }}
-      whileHover={{ y: -4, x: 4, transition: { duration: 0.1 } }}
+      whileHover={{ y: -4, x: 4 }}
       className="p-[0.06rem] bg-gradient-to-b from-[#ffffff] to-[#2D2D2D] rounded-full max-sm:mt-2 "
     >
       <Link href={"#development"}>
