@@ -17,15 +17,24 @@ const Contact = () => {
 
   const onSubmit = async (data) => {
     setIsSubmitting(true);
-
+    setSubmitSuccess(false);
     try {
-      // You can replace this with your actual form submission logic
-      await new Promise((resolve) => setTimeout(resolve, 1000)); // Simulating API call
-      console.log("Form submitted:", data);
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+      if (!response.ok) {
+        const resData = await response.json();
+        throw new Error(resData.message || "Failed to send message");
+      }
       setSubmitSuccess(true);
       reset();
     } catch (error) {
       console.error("Error submitting form:", error);
+      // Optionally, show error to user
     } finally {
       setIsSubmitting(false);
     }
@@ -90,12 +99,12 @@ const Contact = () => {
           </motion.h2>
 
           <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-              transition={{ duration: 0.7, ease: "easeInOut" }}
-          
-          className="w-full max-w-xl mx-auto">
+            transition={{ duration: 0.7, ease: "easeInOut" }}
+            className="w-full max-w-xl mx-auto"
+          >
             <form
               onSubmit={handleSubmit(onSubmit)}
               className="flex flex-col gap-4"
@@ -107,7 +116,7 @@ const Contact = () => {
                 <input
                   type="text"
                   id="fullName"
-                  placeholder="your name"
+                  placeholder="your full name"
                   {...register("fullName", { required: "Name is required" })}
                   className={`bg-white/6 backdrop-blur-md  rounded-full py-4 px-6 focus:outline-none text-white placeholder:text-white/30 ${
                     errors.fullName ? "border border-red-500" : ""
@@ -170,7 +179,7 @@ const Contact = () => {
                 type="submit"
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.2 }}
-                className="bg-[#FFE9D0] cursor-pointer  text-black py-3 px-10 rounded-full self-center mt-2  text-2xl w-full tracking-tighter"
+                className={`bg-[#FFE9D0] cursor-pointer  text-black py-3 px-10 rounded-full self-center mt-2  text-2xl w-full tracking-tighter ${isSubmitting ? "opacity-50 cursor-not-allowed" : ""}`}
                 disabled={isSubmitting}
               >
                 {isSubmitting ? "Sending..." : "Send Message"}
@@ -192,6 +201,5 @@ const Contact = () => {
     </div>
   );
 };
-
 
 export default Contact;
