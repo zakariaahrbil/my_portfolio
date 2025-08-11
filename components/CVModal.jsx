@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const CVModal = ({ show, onClose }) => {
   return (
-    <AnimatePresence>
+    <AnimatePresence >
       {show && (
         <motion.div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm"
@@ -14,7 +14,7 @@ const CVModal = ({ show, onClose }) => {
           transition={{ duration: 0.25 }}
         >
           <motion.div
-            className="rounded-2xl py-12 sm:px-16 px-12 bg-white/10 backdrop-blur-sm flex flex-col items-center gap-8 relative min-w-[320px] min-h-[220px]"
+            className="rounded-2xl py-12 sm:px-16 px-12 bg-white/10 backdrop-blur-sm flex flex-col items-center gap-8 relative max-sm:max-w-[310px] min-h-[220px] "
             initial={{ scale: 0.85, opacity: 0, y: 40 }}
             animate={{ scale: 1, opacity: 1, y: 0 }}
             exit={{ scale: 0.85, opacity: 0, y: 40 }}
@@ -32,7 +32,7 @@ const CVModal = ({ show, onClose }) => {
             >
               &times;
             </button>
-            <h2 className="text-2xl font-semibold mb-4 ">
+            <h2 className="text-2xl font-semibold mb-4 text-center ">
               Choose the language
             </h2>
             <div className="flex gap-6">
