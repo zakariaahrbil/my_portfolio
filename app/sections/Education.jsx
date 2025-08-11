@@ -2,11 +2,13 @@
 import { images } from "@/constants/images";
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
+import CVModal from "@/components/CVModal";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 const Education = () => {
   const [bgOpacity, setBgOpacity] = useState(0);
+  const [showCVModal, setShowCVModal] = useState(false);
 
   const educationData = [
     {
@@ -195,7 +197,7 @@ const Education = () => {
               graphic designer. From concept to creation, I focus on creating
               meaningful solutions.
             </motion.p>
-            <div className="flex gap-1 sm:gap-0 flex-col sm:flex-row items-center justify-center">
+            <div className="flex gap-2 flex-col sm:flex-row items-center justify-center">
               <motion.div
                 initial={{ opacity: 0, y: 20, filter: "blur(20px)" }}
                 whileInView={{
@@ -234,20 +236,23 @@ const Education = () => {
                 viewport={{ once: true }}
                 whileHover={{ y: -4, x: 4 }}
               >
-                <Link
-                  href="/zakaria_ahrbil_cv.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex gap-4 items-center justify-center sm:px-8 sm:py-3 px-6 py-2   rounded-full w-fit"
+                <button
+                  onClick={() => setShowCVModal(true)}
+                  className="flex gap-4 items-center justify-center sm:px-8 sm:py-3 px-6 py-2 cursor-pointer rounded-full w-fit"
                 >
                   <p className="sm:text-2xl text-md leading-none">View Cv</p>
-                  <img src="./open.svg" className="sm:h-7 sm:w-7 h-5 w-5" />
-                </Link>
+                  <img
+                    src="./open.svg"
+                    className="sm:h-7 sm:w-7 h-5 w-5"
+                    alt="Open CV"
+                  />
+                </button>
               </motion.div>
             </div>
           </div>
         </div>
       </motion.div>
+      <CVModal show={showCVModal} onClose={() => setShowCVModal(false)} />
     </section>
   );
 };
