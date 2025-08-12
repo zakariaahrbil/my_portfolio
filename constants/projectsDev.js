@@ -16,7 +16,7 @@ export const projectsDev = [
     ],
     image: "/projects/dev/p1.webp",
     liveUrl: "",
-    githubUrl: "#",
+    githubUrl: "https://github.com/zakariaahrbil/Mbe",
     category: "Mobile",
   },
   {
@@ -35,7 +35,7 @@ export const projectsDev = [
     ],
     image: "/projects/dev/p2.webp",
     liveUrl: "https://mondial-berry.vercel.app/",
-    githubUrl: "#",
+    githubUrl: "https://github.com/zakariaahrbil/mondial_berry",
     category: "Frontend",
   },
   {
@@ -53,7 +53,7 @@ export const projectsDev = [
     ],
     image: "/projects/dev/p3.webp",
     liveUrl: "",
-    githubUrl: "#",
+    githubUrl: "https://github.com/zakariaahrbil/OCR_PFA_LAYERS",
     category: "Full Stack",
   },
   {
@@ -64,7 +64,7 @@ export const projectsDev = [
     technologies: ["Spring Boot", "JWT", "MySQL", "Swagger"],
     image: "/projects/dev/p4.webp",
     liveUrl: "",
-    githubUrl: "#",
+    githubUrl: "https://github.com/zakariaahrbil/agile-scrum-manag-app",
     category: "Backend",
   },
   {
@@ -75,7 +75,7 @@ export const projectsDev = [
     technologies: ["Java", "Next.js", "MySQL", "UI/UX design"],
     image: "/projects/dev/p5.webp",
     liveUrl: "",
-    githubUrl: "#",
+    githubUrl: "https://github.com/zakariaahrbil/GestionSalles",
     category: "Full Stack",
   },
   {
@@ -94,7 +94,7 @@ export const projectsDev = [
     ],
     image: "/projects/dev/p6.webp",
     liveUrl: "https://ensaa-sissan.vercel.app/",
-    githubUrl: "#",
+    githubUrl: "",
     category: "Frontend",
   },
 ];
