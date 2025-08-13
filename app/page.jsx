@@ -7,26 +7,15 @@ import Dev from "./sections/Dev";
 import Skills from "./sections/Skills";
 import Des from "./sections/Des";
 import Lenis from "@studio-freight/lenis";
-import { useEffect, useState, useRef, use } from "react";
+import { useEffect, useState, useRef } from "react";
 import Posters from "./sections/Posters";
 import Contact from "./sections/Contact";
 import Footer from "./sections/Footer";
-import Intro from "@/components/Intro";
-import { set } from "react-hook-form";
-import Loading from "@/components/Loading";
 
 export default function Home() {
   const [isMobile, setIsMobile] = useState(false);
   const lenisRef = useRef(null);
   const rafIdRef = useRef(null);
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 2050); // Simulate a loading delay of 1 second
-    return () => clearTimeout(timer);
-  }, []);
 
   // Handle resize events and mobile detection
   useEffect(() => {
@@ -53,71 +42,69 @@ export default function Home() {
     };
   }, []);
 
-  useEffect(() => {
-    // Don't initialize Lenis on mobile
-    if (isMobile) {
-      if (lenisRef.current) {
-        lenisRef.current.destroy();
-        lenisRef.current = null;
+   useEffect(() => {
+     // Don't initialize Lenis on mobile
+     if (isMobile) {
+       if (lenisRef.current) {
+         lenisRef.current.destroy();
+         lenisRef.current = null;
 
-        if (rafIdRef.current) {
-          cancelAnimationFrame(rafIdRef.current);
-          rafIdRef.current = null;
-        }
-      }
-      return;
-    }
+         if (rafIdRef.current) {
+           cancelAnimationFrame(rafIdRef.current);
+           rafIdRef.current = null;
+         }
+       }
+       return;
+     }
 
-    // Initialize Lenis on desktop
-    if (!lenisRef.current) {
-      lenisRef.current = new Lenis({
-        duration: 2,
-        easing: (t) => t,
-        smoothWheel: true,
-        smoothTouch: false,
-        lerp: 0.08,
-      });
+     // Initialize Lenis on desktop
+     if (!lenisRef.current) {
+       lenisRef.current = new Lenis({
+         duration: 2,
+         easing: (t) => t,
+         smoothWheel: true,
+         smoothTouch: false,
+         lerp: 0.08,
+       });
 
-      const raf = (time) => {
-        if (lenisRef.current) {
-          lenisRef.current.raf(time);
-          rafIdRef.current = requestAnimationFrame(raf);
-        }
-      };
+       const raf = (time) => {
+         if (lenisRef.current) {
+           lenisRef.current.raf(time);
+           rafIdRef.current = requestAnimationFrame(raf);
+         }
+       };
 
-      rafIdRef.current = requestAnimationFrame(raf);
-    }
+       rafIdRef.current = requestAnimationFrame(raf);
+     }
 
-    return () => {
-      if (lenisRef.current) {
-        lenisRef.current.destroy();
-        lenisRef.current = null;
-      }
+     return () => {
+       if (lenisRef.current) {
+         lenisRef.current.destroy();
+         lenisRef.current = null;
+       }
 
-      if (rafIdRef.current) {
-        cancelAnimationFrame(rafIdRef.current);
-        rafIdRef.current = null;
-      }
-    };
-  }, [isMobile]);
+       if (rafIdRef.current) {
+         cancelAnimationFrame(rafIdRef.current);
+         rafIdRef.current = null;
+       }
+     };
+   }, [isMobile]);
 
-  return isLoading ? <Loading/> : (
-    <Intro>
-      <div className="flex flex-col items-start justify-start min-h-screen bg-black w-full relative">
-        <Menu />
+  return (
+    <div className="flex flex-col items-start justify-start min-h-screen bg-black w-full relative">
+      <Menu />
 
-        <main className="w-full relative overflow-hidden">
-          <Hero />
-          <About />
-          <Education />
-          <Skills />
-          <Dev />
-          <Des />
-          <Posters />
-          <Contact />
-          <Footer />
-        </main>
-      </div>
-    </Intro>
+      <main className="w-full relative overflow-hidden">
+        <Hero />
+        <About />
+        <Education />
+        <Skills />
+        <Dev />
+        <Des />
+        <Posters />
+        <Contact />
+        <Footer />
+      </main>
+    </div>
   );
 }

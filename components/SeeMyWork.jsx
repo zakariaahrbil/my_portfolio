@@ -26,7 +26,7 @@ export default function SeeMyWork() {
           <p className=" font-light sm:text-2xl tracking-wider leading-none ">
             See <span className="font-bold">My Work</span>
           </p>
-          <img src={images.eyeSee} className="sm:w-16 w-14"></img>
+          <img src={images.eyeSee} className="w-16"></img>
         </div>
       </Link>
     </motion.div>

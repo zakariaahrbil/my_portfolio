@@ -1,6 +1,6 @@
-import { AnimatePresence } from "framer-motion";
 import "./globals.css";
 import localFont from "next/font/local";
+
 
 export const metadata = {
   title: "Zalmoxis Portfolio",
@@ -105,11 +105,13 @@ const montserrat = localFont({
 });
 
 export default function RootLayout({ children }) {
+    
+
+
+
   return (
     <html lang="en">
-      <AnimatePresence >
-        <body className={`${montserrat.variable} antialiased`}>{children}</body>
-      </AnimatePresence>
+      <body className={`${montserrat.variable} antialiased`}>{children}</body>
     </html>
   );
 }
