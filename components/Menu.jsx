@@ -138,8 +138,8 @@ export default function Menu() {
     <nav className="fixed bottom-8 right-8 z-50 overflow-hidden">
       <motion.div
         className="p-[0.06rem] bg-gradient-to-b from-[#ffffff] to-[#2D2D2D] rounded-full"
-        initial={{ width: isOpen ? "auto" : "3.8rem" }}
-        animate={{ width: isOpen ? "auto" : "3.8rem" }}
+        initial={{ width: isOpen ? "auto" : "3.8rem" , y:100 }}
+        animate={{ width: isOpen ? "auto" : "3.8rem", y:0 }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
       >
         <div

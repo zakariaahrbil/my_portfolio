@@ -199,11 +199,11 @@ const Education = () => {
             </motion.p>
             <div className="flex gap-2 flex-col sm:flex-row items-center justify-center">
               <motion.div
-                initial={{ opacity: 0, y: 20, filter: "blur(20px)" }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{
                   opacity: 1,
                   y: 0,
-                  filter: "blur(0px)",
+
                   transition: {
                     duration: 0.8,
                     ease: "easeInOut",
@@ -222,11 +222,11 @@ const Education = () => {
                 </Link>
               </motion.div>
               <motion.div
-                initial={{ opacity: 0, y: 20, filter: "blur(20px)" }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{
                   opacity: 1,
                   y: 0,
-                  filter: "blur(0px)",
+
                   transition: {
                     duration: 0.8,
                     ease: "easeInOut",
