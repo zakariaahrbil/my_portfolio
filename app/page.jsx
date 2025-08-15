@@ -11,6 +11,7 @@ import { useEffect, useState, useRef } from "react";
 import Posters from "./sections/Posters";
 import Contact from "./sections/Contact";
 import Footer from "./sections/Footer";
+import CustomCursor from "@/components/CustomCursor";
 
 export default function Home() {
   const [isMobile, setIsMobile] = useState(false);
@@ -92,6 +93,7 @@ export default function Home() {
 
   return (
     <div className="flex flex-col items-start justify-start min-h-screen bg-black w-full relative">
+      {!isMobile && <CustomCursor />}
       <Menu />
 
       <main className="w-full relative overflow-hidden">

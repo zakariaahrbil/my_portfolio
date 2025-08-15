@@ -51,7 +51,7 @@ export default function Menu() {
 
     const observer = new window.IntersectionObserver(handleIntersect, {
       root: null,
-      rootMargin: "0px 0px -60% 0px", // Trigger when section is 40% from top
+      rootMargin: "0px 0px -60% 0px",
       threshold: 0.2,
     });
 
