@@ -124,7 +124,7 @@ const About = () => {
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.5 }}
           >
-            {`I'm Zakaria Ahrbil, a creative developer and designer studying Software Engineering. Through the myth of Zalmoxis, I channel code and design into tools of transformation — from digital experiences to intelligent systems.`
+            {`I am Zakaria Ahrbil a third-year Software Engineering student at ENSA Agadir, passionate about web, mobile, and AI development. I create clean, user-focused applications that blend functionality with modern design. Always exploring new technologies to build better, smarter digital solutions.`
               .split(" ")
               .map((word, index) => (
                 <motion.span

@@ -2,28 +2,30 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { images } from "@/constants/images";
+import Image from "next/image";
 
 const ProjectCardDes = ({ project, index }) => {
   return (
     <motion.div
-      initial={{ opacity: 0, filter: "blur(10px)" }}
-      whileInView={{ opacity: 1,  filter: "blur(0px)" }}
-      transition={{ duration: 0.8, delay: index * 0.1 }}
-      viewport={{ once: true ,amount: 0.2 }}
+      initial={{ opacity: 0,y: 100 }}
+      whileInView={{ opacity: 1 ,y: 0 }}
+      transition={{ duration: 1, delay: index * 0.1 }}
+      viewport={{ once: true, amount: 0.2 }}
       whileHover={{
         scale: 1.05,
         transition: { duration: 0.4, ease: "easeInOut" },
       }}
-      className="group relative bg-gradient-to-b from-white/20 to-black-1 backdrop-blur-sm h-full pb-3 rounded-t-xl overflow-hidden"
+      className="group relative bg-gradient-to-b from-white/20 to-black-1  h-full pb-3 rounded-t-xl overflow-hidden"
     >
-      <div className="bg-white ">
-        <img
-          src={
-            project.image ||
-            "https://images.unsplash.com/photo-1754404053324-8f910c2b7e2d?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          }
+      <div className="bg-white relative">
+        <Image
+          width={1920}
+          height={1080}
+          quality={90}
+          placeholder="empty"
+          src={project.image}
           alt={project.title}
-          className="rounded-2xl border-4  border-white hover:mix-blend-luminosity mix-blend-normal   aspect-video w-full object-cover"
+          className="rounded-2xl border-4  border-white hover:mix-blend-luminosity mix-blend-normal   aspect-video w-full h-full"
         />
       </div>
       <div className="w-full flex flex-col gap-4 justify-between px-4   ">
